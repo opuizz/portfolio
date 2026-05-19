@@ -1,18 +1,25 @@
 /* layout */
-* {
-  background-color: #000000;
-}
 #header {
   position: fixed;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+
   display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 20px 30px;
+
   font-size: 18px;
   font-weight: 600;
-  justify-content: space-between;
-  padding: 20px 30px;
+
+  z-index: 999;
 }
 
 .container {
-  width: 1520px;
+  width: 1513px;
 }
 
 /* header */
@@ -21,7 +28,7 @@
   position: fixed;
   right: 0;
   top: 0;
-  z-index: 300;
+  z-index: 9999999;
 }
 #mNav i {
   color: #fff;
@@ -383,4 +390,126 @@ html {
 body {
   margin: 0;
   overflow-x: hidden;
+}
+/* *****profile****** */
+#profile {
+  width: 100%;
+  aspect-ratio: 1920 / 2080;
+
+  background: url("../img/main_about.png") no-repeat center top;
+
+  background-size: cover;
+
+  position: relative;
+  overflow: hidden;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-size: 100% auto;
+}
+
+.container {
+  width: 100%;
+  max-width: 1400px;
+
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+.profile_inner {
+  position: relative;
+  z-index: 2;
+  top: -303px;
+
+  width: 100%;
+  color: #fff;
+}
+
+/* PROFILE 제목 */
+.profile_inner > h1 {
+  text-align: center;
+
+  font-size: 50px;
+  font-style: italic;
+  font-weight: 700;
+
+  letter-spacing: 8px;
+
+  margin-bottom: 110px;
+
+  font-family: "Cormorant Garamond", serif;
+}
+
+/* 3개 영역 */
+.profile_inner ul {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+
+  gap: 50px;
+}
+
+/* 각 영역 */
+.profile_inner ul li {
+  width: 320px;
+
+  position: relative;
+  left: 60px;
+  text-align: left;
+}
+
+/* 세로 구분선 */
+.profile_inner ul li:not(:last-child)::after {
+  content: "";
+
+  position: absolute;
+  top: 0;
+  right: -25px;
+
+  width: 1px;
+  height: 180px;
+
+  background: rgba(255, 255, 255, 0.25);
+}
+
+/* 소제목 */
+.profile_inner ul li h2 {
+  font-size: 22px;
+  font-weight: 400;
+
+  letter-spacing: 2px;
+
+  color: #ff9b32;
+
+  margin-bottom: 20px;
+}
+
+/* 내용 */
+.profile_inner ul li p {
+  font-size: 17px;
+  font-weight: 100;
+
+  line-height: 2;
+
+  color: rgba(255, 255, 255, 0.82);
+}
+
+/* *****works******* */
+#works {
+  background-color: aquamarine;
+}
+.works_inner ul {
+  display: flex;
+  justify-content: space-between;
+}
+.works_inner ul li {
+  flex: 1;
+}
+.works_inner ul li:nth-child(1) {
+  background: url();
+}
+.works_inner ul li a {
+  color: #c98a5b;
 }

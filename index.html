@@ -160,22 +160,86 @@
         </div>
       </section>
       <section id="profile">
-        PROFILE
-        <ul>
-          <li>
-            <h1>CAREER</h1>
-            <p>22.01 ~ 25.06</p>
-            <p>재직 회사 : (주)오마뎅</p>
-            <p>재직 부서 : 마케팅 기획팀</p>
-          </li>
-          <li><h1>CORE WORKS</h1></li>
-          <li><h1>ACHIEVEMENTS</h1></li>
-        </ul>
+        <div class="container">
+          <div class="profile_inner">
+            <h1>PROFILE</h1>
+
+            <ul>
+              <li>
+                <h2>CAREER</h2>
+
+                <p>22.01 ~ 25.06</p>
+                <p>재직 회사 : (주)오마뎅</p>
+                <p>재직 부서 : 마케팅 기획팀</p>
+              </li>
+
+              <li>
+                <h2>CORE WORKS</h2>
+
+                <p>1. 인스타그램 콘텐츠 기획 및 제작</p>
+                <p>2. 네이버 스토어 상세페이지 제작</p>
+                <p>3. 브랜드 행사 기획 및 홍보</p>
+              </li>
+
+              <li>
+                <h2>ACHIEVEMENTS</h2>
+
+                <p>1. SNS 팔로워 증가</p>
+                <p>2. 브랜드 인지도 향상</p>
+                <p>3. 행사 참여율 상승</p>
+              </li>
+            </ul>
+          </div>
+        </div>
       </section>
-      <section id="works"></section>
+      <section id="works">
+        <div class="container">
+          <div class="works_inner">
+            <ul>
+              <li>
+                <a href="#">
+                  <p>01</p>
+                  <h1>Marketing</h1>
+                  <p>Career / Core Work</p>
+                  <p>view</p>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <p>02</p>
+                  <h1>Design</h1>
+                  <p>Artwork / Banner / Event Page / Poster</p>
+                  <p>view</p>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <p>03</p>
+                  <h1>Website</h1>
+                  <p>Team Project / Rebuild</p>
+                  <p>view</p>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <p>04</p>
+                  <h1>Film</h1>
+                  <p>Opening / Commential / Short Art</p>
+                  <p>view</p>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
     </main>
     <footer id="contact"></footer>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <!-- gsap -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+
+    <!-- scrolltrigger -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
     <script>
       // 모바일 메뉴
       const button = document.querySelector("#mNav i");
@@ -258,6 +322,38 @@
         angle -= 72;
         rotateCarousel();
       }, 3000);
+
+      gsap.registerPlugin(ScrollTrigger);
+
+      /* PROFILE 제목 */
+      gsap.from(".profile_inner > h1", {
+        scrollTrigger: {
+          trigger: "#profile",
+          start: "top 70%",
+        },
+
+        y: 100,
+        opacity: 0,
+
+        duration: 1.2,
+        ease: "power3.out",
+      });
+
+      /* 아래 내용 */
+      gsap.from(".profile_inner ul", {
+        scrollTrigger: {
+          trigger: "#profile",
+          start: "top 65%",
+        },
+
+        y: 100,
+        opacity: 0,
+
+        duration: 1.2,
+        delay: 0.4,
+
+        ease: "power3.out",
+      });
     </script>
   </body>
 </html>
