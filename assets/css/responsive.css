@@ -1,0 +1,25 @@
+/* header */
+@media (max-width: 960px) {
+  .line {
+    width: 160px;
+  }
+}
+@media (max-width: 768px) {
+  #header {
+    justify-content: center;
+  }
+  #mNav {
+    display: block;
+  }
+  .lnb {
+    display: none;
+  }
+  .line {
+    width: 100px;
+  }
+}
+@media (max-width: 480px) {
+  .line {
+    width: 60px;
+  }
+}
