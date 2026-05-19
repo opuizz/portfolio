@@ -3,6 +3,7 @@
   background-color: #000000;
 }
 #header {
+  position: fixed;
   display: flex;
   font-size: 18px;
   font-weight: 600;
@@ -146,28 +147,240 @@
   will-change: opacity;
   text-shadow: none;
 }
-/* about */
-#about {
-  color: #fff;
-}
-.swiper-slide {
-  background: url(../img/about_bg.png) center top;
-}
-.swiper-wrapper {
-  width: 553px;
-  height: 376px;
-}
-.about_card {
+
+/******** about ***********/
+.stage {
+  width: 100%;
+  height: 100vh;
+
   display: flex;
   justify-content: center;
+  align-items: center;
+
+  background-image: url("../img/about_bg.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
 }
-.about_img img {
-  width: 25%;
+.card-wrap {
+  position: relative;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.about_about {
-  color: #fff;
+.icon-cards {
+  position: relative;
+  width: 390px;
+  height: 270px;
+  perspective: 1800px;
+  isolation: isolate;
 }
-.swiper-button-next,
-.swiper-button-prev {
-  color: #d89c2b;
+
+.icon-cards__content {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 50%;
+  top: 50%;
+  transform-style: preserve-3d;
+  transform: translate(-50%, -50%) rotateY(0deg);
+  transition: transform 1s ease;
+  pointer-events: none;
+}
+
+/* 카드 */
+
+.icon-cards__item {
+  position: absolute;
+
+  left: 50%;
+  top: 50%;
+
+  width: 390px;
+  height: 270px;
+
+  margin-left: -195px;
+  margin-top: -135px;
+
+  border: 1px solid #ffaf3f;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  color: white;
+  font-size: 30px;
+  font-weight: bold;
+
+  backface-visibility: hidden;
+  background: rgba(6, 6, 6, 0.92);
+
+  overflow: hidden;
+
+  transform-style: preserve-3d;
+}
+.card_desc {
+  background: transparent !important;
+
+  isolation: isolate;
+
+  position: relative;
+  z-index: 10;
+}
+.icon-cards__item img {
+  width: 198px;
+  height: 270px;
+  opacity: 1;
+}
+.profile {
+  display: flex;
+  justify-content: space-between;
+}
+.name {
+  font-size: 24px;
+  font-weight: 500;
+  letter-spacing: 10%;
+  padding-bottom: 10px;
+}
+.nameE {
+  display: block;
+  font-size: 14px;
+  font-weight: 300;
+  letter-spacing: 10%;
+}
+/* .profile_wrap {
+  height: 270px;
+  width: 157px;
+} */
+.profile_desc {
+  display: flex;
+}
+.title_info {
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 10%;
+  color: #c98a5b;
+  line-height: 3.3;
+  text-align: left;
+}
+.info {
+  padding-left: 3px;
+  padding-right: 5px;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 3.3;
+  text-align: left;
+}
+.info p:nth-child(3) {
+  font-size: 12px;
+}
+.about,
+.education,
+.skills {
+  display: flex;
+  flex-direction: column;
+}
+.about_desc {
+  width: 371px;
+  text-align: center;
+}
+.education .card_desc p {
+  padding-bottom: 20px;
+}
+.education .card_desc p:nth-child(1),
+.education .card_desc p:nth-child(3) {
+  padding-bottom: 0;
+}
+.icons {
+  width: 100%;
+  height: 100px;
+  display: block;
+}
+.icons_l1 img,
+.icons_l2 img {
+  width: 31px;
+  height: 31px;
+  margin: 0 6px 6px 6px;
+}
+.card_desc {
+  font-size: 15px;
+  font-weight: 300;
+  letter-spacing: 7%;
+  text-align: center;
+}
+.card_title {
+  font-size: 20px;
+  font-weight: 500;
+  letter-spacing: 20%;
+  padding-bottom: 30px;
+}
+.card_title h4 {
+  display: inline;
+}
+.card_title p {
+  display: inline;
+}
+/* 핵심 */
+.icon-cards__item:nth-child(1) {
+  transform: rotateY(0deg) translateZ(320px);
+}
+
+.icon-cards__item:nth-child(2) {
+  transform: rotateY(72deg) translateZ(320px);
+}
+
+.icon-cards__item:nth-child(3) {
+  transform: rotateY(144deg) translateZ(320px);
+}
+
+.icon-cards__item:nth-child(4) {
+  transform: rotateY(216deg) translateZ(320px);
+}
+
+.icon-cards__item:nth-child(5) {
+  transform: rotateY(288deg) translateZ(320px);
+}
+
+/* 버튼 */
+
+.prev,
+.next {
+  position: absolute;
+
+  top: 50%;
+  transform: translateY(-50%);
+
+  width: 60px;
+  height: 60px;
+  color: #ffaf3f;
+  background: none;
+  font-size: 30px;
+
+  cursor: pointer;
+
+  z-index: 999999;
+}
+
+.prev {
+  left: -110px;
+  pointer-events: auto;
+}
+
+.next {
+  right: -110px;
+  pointer-events: auto;
+}
+/* 기본 세팅 */
+html {
+  box-sizing: border-box;
+}
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+body {
+  margin: 0;
+  overflow-x: hidden;
 }

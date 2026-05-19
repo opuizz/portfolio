@@ -81,55 +81,82 @@
           <span class="stage_text">KWON INKYUNG</span>
         </div>
       </section>
-      <section id="about">
-        <div class="swiper aboutSwiper">
-          <div class="swiper-wrapper">
-            <!-- slide 1 -->
-            <div class="swiper-slide">
-              <div class="about_card">
-                <div class="about_img">
-                  <img src="assets/img/profile_img.jpeg" alt="" />
-                </div>
-                <div class="about_profile">
-                  <h2>PROFILE</h2>
-                  <p><span>Date</span> 2000.02.03</p>
-                  <p><span>Tel</span> 010-3287-1096</p>
-                  <p><span>E-mail</span> opuiz04@naver.com</p>
+      <section class="stage">
+        <div class="card-wrap">
+          <button class="prev">&#10094;</button>
+
+          <div class="icon-cards">
+            <div class="icon-cards__content">
+              <div class="icon-cards__item profile">
+                <img src="assets/img/profile_img.jpeg" alt="" />
+                <div class="profile_wrap">
+                  <div class="card_title">
+                    <h1>PROFILE</h1>
+                    <h2 class="name">권인경</h2>
+                    <h2 class="nameE">KWON INKYUNG</h2>
+                  </div>
+                  <div class="card_desc">
+                    <div class="profile_desc">
+                      <div class="title_info">
+                        <p>Date</p>
+                        <p>Tel</p>
+                        <p>E-mail</p>
+                      </div>
+                      <div class="info">
+                        <p>2000.02.03</p>
+                        <p>010-3287-1096</p>
+                        <p>opuiz04@naver.com</p>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
-            </div>
-            <!-- slide 2 -->
-            <div class="swiper-slide">
-              <div class="about_about">
-                <h2>ABOUT</h2>
-                <p>
+              <div class="icon-cards__item about">
+                <div class="card_title">ABOUT</div>
+                <div class="card_desc about_desc">
                   무대 위 빛나는 순간들을 바라보며 자라온 저는,이제는 그 장면을 직접 만들어내는 사람이 되고자 합니다.
                   기존 마케팅 실무 경험을 바탕으로 전하고자 하는 메시지와 감정을 시각적으로 표현하며, 더 많은 사람들에게
                   오래 기억될 무대를 만들고싶습니다.
-                </p>
+                </div>
               </div>
-            </div>
-            <!-- slide 3 -->
-            <div class="swiper-slide">
-              <div class="about_education">
-                <h2>EDUCATION</h2>
-                <p>배화여자대학교</p>
-                <p>비즈니스 중국어 전공</p>
-                <p>MBC 컴퓨터 아카데미</p>
-                <p>생성형 AI를 활용한 영상 웹퍼블리셔&프론트앤드</p>
+              <div class="icon-cards__item education">
+                <div class="card_title">EDUCATION</div>
+                <div class="card_desc">
+                  <p>배화여자대학교</p>
+                  <p>비즈니스 중국어 전공</p>
+                  <p>MBC 컴퓨터 아카데미</p>
+                  <p>생성형 AI를 활용한 영상 웹퍼블리셔&프론트앤드 과정 수료</p>
+                </div>
               </div>
-            </div>
-            <!-- slide 4 -->
-            <div class="swiper-slide">
-              <div class="about_skills">
-                <h2>SKILLS</h2>
-                <p>HTML / CSS / JS</p>
-                <p>Photoshop / Illustrator</p>
+              <div class="icon-cards__item skills">
+                <div class="card_title">SKILLS</div>
+                <div class="card_desc icons">
+                  <div class="icons_l1">
+                    <img src="assets/img/Illustrator.png" alt="" />
+                    <img src="assets/img/Photoshop.png" alt="" />
+                    <img src="assets/img/Premiere Pro.png" alt="" />
+                    <img src="assets/img/After Effects.png" alt="" />
+                    <img src="assets/img/Figma.png" alt="" />
+                  </div>
+                  <div class="icons_l2">
+                    <img src="assets/img/Coding Icons-3.png" alt="" />
+                    <img src="assets/img/Coding Icons.png" alt="" />
+                    <img src="assets/img/Coding Icons-1.png" alt="" />
+                    <img src="assets/img/Coding Icons-2.png" alt="" />
+                  </div>
+                </div>
+              </div>
+              <div class="icon-cards__item">
+                <div class="card_title">about</div>
+                <div class="card_desc">
+                  무대 위 빛나는 순간들을 바라보며 자라온 저는,이제는 그 장면을 직접 만들어내는 사람이 되고자 합니다.
+                  기존 마케팅 실무 경험을 바탕으로 전하고자 하는 메시지와 감정을 시각적으로 표현하며, 더 많은 사람들에게
+                  오래 기억될 무대를 만들고싶습니다.
+                </div>
               </div>
             </div>
           </div>
-          <div class="swiper-button-next"></div>
-          <div class="swiper-button-prev"></div>
+          <button class="next">&#10095;</button>
         </div>
       </section>
       <section id="profile">
@@ -201,21 +228,36 @@
       });
 
       //   about 스와이퍼
-    </script>
-    <script>
-      var swiper = new Swiper(".aboutSwiper", {
-        slidesPerView: 1,
-        spaceBetween: 30,
-        loop: true,
-        pagination: {
-          el: ".swiper-pagination",
-          clickable: true,
-        },
-        navigation: {
-          nextEl: ".swiper-button-next",
-          prevEl: ".swiper-button-prev",
-        },
+      const content = document.querySelector(".icon-cards__content");
+      const next = document.querySelector(".next");
+      const prev = document.querySelector(".prev");
+
+      let angle = 0;
+
+      function rotateCarousel() {
+        content.style.transform = `translate(-50%, -50%) rotateY(${angle}deg)`;
+      }
+
+      /* 다음 */
+
+      next.addEventListener("click", () => {
+        angle -= 72;
+        rotateCarousel();
       });
+
+      /* 이전 */
+
+      prev.addEventListener("click", () => {
+        angle += 72;
+        rotateCarousel();
+      });
+
+      /* 자동 회전 */
+
+      setInterval(() => {
+        angle -= 72;
+        rotateCarousel();
+      }, 3000);
     </script>
   </body>
 </html>

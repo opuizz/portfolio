@@ -23,3 +23,93 @@
     width: 60px;
   }
 }
+
+/* about */
+@media (max-width: 1400px) {
+  .icon-cards {
+    width: 27.8vw;
+    height: 19.2vw;
+  }
+
+  .icon-cards__item {
+    width: 27.8vw;
+    height: 19.2vw;
+
+    margin-left: -13.9vw;
+    margin-top: -9.6vw;
+  }
+
+  .icon-cards__item img {
+    width: 14.1vw;
+    height: 19.2vw;
+  }
+
+  .about_desc {
+    width: 26vw;
+  }
+
+  /* 회전 거리 */
+
+  .icon-cards__item:nth-child(1) {
+    transform: rotateY(0deg) translateZ(22.8vw);
+  }
+
+  .icon-cards__item:nth-child(2) {
+    transform: rotateY(72deg) translateZ(22.8vw);
+  }
+
+  .icon-cards__item:nth-child(3) {
+    transform: rotateY(144deg) translateZ(22.8vw);
+  }
+
+  .icon-cards__item:nth-child(4) {
+    transform: rotateY(216deg) translateZ(22.8vw);
+  }
+
+  .icon-cards__item:nth-child(5) {
+    transform: rotateY(288deg) translateZ(22.8vw);
+  }
+
+  /* 폰트 */
+
+  .card_title {
+    font-size: 1.4vw;
+    padding-bottom: 2vw;
+  }
+
+  .card_desc {
+    font-size: 1vw;
+  }
+
+  .name {
+    font-size: 1.6vw;
+  }
+
+  .nameE,
+  .title_info,
+  .info {
+    font-size: 0.9vw;
+  }
+
+  .icons_l1 img,
+  .icons_l2 img {
+    width: 2.2vw;
+    height: 2.2vw;
+    margin: 0 0.4vw 0.4vw;
+  }
+
+  /* 버튼 */
+
+  .prev,
+  .next {
+    font-size: 2vw;
+  }
+
+  .prev {
+    left: -12vw;
+  }
+
+  .next {
+    right: -12vw;
+  }
+}
