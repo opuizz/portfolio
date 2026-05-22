@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="assets/css/font.css" />
     <link rel="stylesheet" href="assets/css/reset.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css" />
     <script src="https://kit.fontawesome.com/fb27592f06.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="assets/css/style.css" />
     <link rel="stylesheet" href="assets/css/responsive.css" />
@@ -47,21 +48,24 @@
 
     <header id="header">
       <div class="logo">
-        <a href="#">logo</a>
+        <a href="#stage"
+          ><img src="assets/img/logo_icon.png" alt="" />
+          <p>PORTFOLIO</p></a
+        >
       </div>
       <div class="lnb">
         <ul>
           <li>
-            <a href="#">ABOUT</a>
+            <a href="#about">ABOUT</a>
           </li>
           <li>
-            <a href="#">PROFILE</a>
+            <a href="#profile">PROFILE</a>
           </li>
           <li>
-            <a href="#">WORKS</a>
+            <a href="#works">WORKS</a>
           </li>
           <li>
-            <a href="#">CONTACT</a>
+            <a href="#contact">CONTACT</a>
           </li>
         </ul>
       </div>
@@ -80,8 +84,15 @@
           <span class="line"></span>
           <span class="stage_text">KWON INKYUNG</span>
         </div>
+        <div class="scroll-down">
+          <span>SCROLL DOWN</span>
+
+          <div class="scroll-line">
+            <div class="scroll-dot"></div>
+          </div>
+        </div>
       </section>
-      <section class="stage">
+      <section id="about">
         <div class="card-wrap">
           <button class="prev">&#10094;</button>
 
@@ -146,17 +157,83 @@
                   </div>
                 </div>
               </div>
-              <div class="icon-cards__item">
-                <div class="card_title">about</div>
+              <div class="icon-cards__item license">
+                <div class="card_title">LICENSE</div>
                 <div class="card_desc">
-                  무대 위 빛나는 순간들을 바라보며 자라온 저는,이제는 그 장면을 직접 만들어내는 사람이 되고자 합니다.
-                  기존 마케팅 실무 경험을 바탕으로 전하고자 하는 메시지와 감정을 시각적으로 표현하며, 더 많은 사람들에게
-                  오래 기억될 무대를 만들고싶습니다.
+                  <p>HSK 4급</p>
+                  <p>GTQ 1급</p>
                 </div>
               </div>
             </div>
           </div>
           <button class="next">&#10095;</button>
+        </div>
+      </section>
+      <section id="about_m">
+        <div class="contain">
+          <button class="m-prev">&#10094;</button>
+          <div class="about_m">
+            <div class="swiper-slide-m active">
+              <img src="assets/img/profile_img.jpeg" alt="" />
+            </div>
+            <div class="swiper-slide-m">
+              <div class="about_p">
+                <h1>PROFILE</h1>
+                <h2 class="name">권인경</h2>
+                <h2 class="nameE">KWON INKYUNG</h2>
+                <h4>
+                  Date
+                  <p>2000.02.03</p>
+                </h4>
+                <h4>
+                  Tel
+                  <p>010-3287-1096</p>
+                </h4>
+                <h4>
+                  E-mail
+                  <p>opuiz04@naver.com</p>
+                </h4>
+              </div>
+            </div>
+            <div class="swiper-slide-m">
+              <div class="card_title">ABOUT</div>
+              <div class="card_desc about_desc">
+                무대 위 빛나는 순간들을 바라보며 자라온 저는,이제는 그 장면을 직접 만들어내는 사람이 되고자 합니다. 기존
+                마케팅 실무 경험을 바탕으로 전하고자 하는 메시지와 감정을 시각적으로 표현하며, 더 많은 사람들에게 오래
+                기억될 무대를 만들고싶습니다.
+              </div>
+            </div>
+            <div class="swiper-slide-m">
+              <div class="card_title">SKILLS</div>
+              <div class="card_desc icons">
+                <div class="icons_l1">
+                  <img src="assets/img/Illustrator.png" alt="" />
+                  <img src="assets/img/Photoshop.png" alt="" />
+                  <img src="assets/img/Premiere Pro.png" alt="" />
+                </div>
+                <div class="icons_l2">
+                  <img src="assets/img/After Effects.png" alt="" />
+                  <img src="assets/img/Figma.png" alt="" />
+                  <img src="assets/img/Coding Icons-3.png" alt="" />
+                </div>
+                <div class="icons_l3">
+                  <img src="assets/img/Coding Icons.png" alt="" />
+                  <img src="assets/img/Coding Icons-1.png" alt="" />
+                  <img src="assets/img/Coding Icons-2.png" alt="" />
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide-m">
+              <div class="card_title">EDUCATION</div>
+              <div class="card_desc">
+                <p>배화여자대학교</p>
+                <p>비즈니스 중국어 전공</p>
+                <p>MBC 컴퓨터 아카데미</p>
+                <p>생성형 AI를 활용한 영상 웹퍼블리셔&프론트앤드 과정 수료</p>
+              </div>
+            </div>
+          </div>
+          <button class="m-next">&#10095;</button>
         </div>
       </section>
       <section id="profile">
@@ -190,50 +267,84 @@
               </li>
             </ul>
           </div>
+          <div class="view"><a href="assets/html/sub1.html">VIEW MORE</a></div>
         </div>
       </section>
+      <!-- //profile -->
       <section id="works">
         <div class="container">
           <div class="works_inner">
             <ul>
               <li>
-                <a href="#">
-                  <p>01</p>
-                  <h1>Marketing</h1>
-                  <p>Career / Core Work</p>
-                  <p>view</p>
+                <a href="assets/html/sub1.html">
+                  <img src="assets/img/marketing_img.png" alt="" />
+                  <figcaption>
+                    <h2>01</h2>
+                    <h1>Marketing</h1>
+                    <p>Career / Core Work</p>
+                    <h4>view</h4>
+                  </figcaption>
                 </a>
               </li>
               <li>
-                <a href="#">
-                  <p>02</p>
-                  <h1>Design</h1>
-                  <p>Artwork / Banner / Event Page / Poster</p>
-                  <p>view</p>
+                <a href="assets/html/sub2.html">
+                  <img src="assets/img/design_img.png" alt="" />
+                  <figcaption>
+                    <h2>02</h2>
+                    <h1>Design</h1>
+                    <p>Artwork / Banner / Event Page / Poster</p>
+                    <h4>view</h4>
+                  </figcaption>
                 </a>
               </li>
               <li>
-                <a href="#">
-                  <p>03</p>
-                  <h1>Website</h1>
-                  <p>Team Project / Rebuild</p>
-                  <p>view</p>
+                <a href="assets/html/sub3.html">
+                  <img src="assets/img/website_img.png" alt="" />
+                  <figcaption>
+                    <h2>03</h2>
+                    <h1>Website</h1>
+                    <p>Team Project / Rebuild</p>
+                    <h4>view</h4>
+                  </figcaption>
                 </a>
               </li>
               <li>
-                <a href="#">
-                  <p>04</p>
-                  <h1>Film</h1>
-                  <p>Opening / Commential / Short Art</p>
-                  <p>view</p>
+                <a href="assets/html/sub4.html">
+                  <img src="assets/img/film_img.png" alt="" />
+                  <figcaption>
+                    <h2>04</h2>
+                    <h1>Film</h1>
+                    <p>Opening / Commential / Short Art</p>
+                    <h4>view</h4>
+                  </figcaption>
                 </a>
               </li>
             </ul>
           </div>
         </div>
       </section>
+      <!-- //works -->
+      <section id="contact">
+        <div class="contact_dot1">
+          <img src="assets/img/contact_dot2.png" alt="" />
+        </div>
+        <div class="contianer">
+          <div class="contact_info">
+            <h1>CONTACT</h1>
+            <p>권인경</p>
+            <p>opuiz04@naver.com</p>
+          </div>
+        </div>
+        <div class="contact_dot2">
+          <img src="assets/img/contact_dot2.png" alt="" />
+        </div>
+      </section>
     </main>
-    <footer id="contact"></footer>
+    <button id="top_btn">
+      <img src="assets/img/top_btn.png" alt="" />
+    </button>
+    <!-- //main -->
+
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <!-- gsap -->
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
@@ -290,7 +401,16 @@
         }
         console.log(scrollY);
       });
+      // scroll down
+      window.addEventListener("scroll", () => {
+        const scrollDown = document.querySelector(".scroll-down");
 
+        if (window.scrollY > window.innerHeight * 0.9) {
+          scrollDown.style.opacity = "0";
+        } else {
+          scrollDown.style.opacity = "1";
+        }
+      });
       //   about 스와이퍼
       const content = document.querySelector(".icon-cards__content");
       const next = document.querySelector(".next");
@@ -325,6 +445,61 @@
 
       gsap.registerPlugin(ScrollTrigger);
 
+      // about_m
+      const slides = document.querySelectorAll(".swiper-slide-m");
+      const nextBtn = document.querySelector(".m-next");
+      const prevBtn = document.querySelector(".m-prev");
+
+      let current = 0;
+
+      /* 첫 카드 */
+
+      slides[current].classList.add("active");
+
+      /* 보여주기 */
+
+      function showSlide(index) {
+        slides.forEach((slide) => {
+          slide.classList.remove("active");
+        });
+
+        slides[index].classList.add("active");
+      }
+
+      /* 다음 */
+
+      function nextSlide() {
+        current++;
+
+        if (current >= slides.length) {
+          current = 0;
+        }
+
+        showSlide(current);
+      }
+
+      /* 이전 */
+
+      function prevSlide() {
+        current--;
+
+        if (current < 0) {
+          current = slides.length - 1;
+        }
+
+        showSlide(current);
+      }
+
+      /* 버튼 */
+
+      nextBtn.addEventListener("click", nextSlide);
+      prevBtn.addEventListener("click", prevSlide);
+
+      /* 자동 슬라이드 */
+
+      setInterval(() => {
+        nextSlide();
+      }, 3000);
       /* PROFILE 제목 */
       gsap.from(".profile_inner > h1", {
         scrollTrigger: {
@@ -354,6 +529,65 @@
 
         ease: "power3.out",
       });
+      // contact
+      const box1 = document.querySelector("#contact .contact_dot1");
+      const box2 = document.querySelector("#contact .contact_dot2");
+
+      gsap.fromTo(
+        box1,
+        {
+          xPercent: -120,
+          opacity: 0,
+        },
+        {
+          xPercent: 80,
+          opacity: 1,
+
+          scrollTrigger: {
+            trigger: "#contact",
+            start: "top 80%",
+            end: "top 30%",
+            scrub: true,
+          },
+        },
+      );
+
+      gsap.fromTo(
+        box2,
+        {
+          xPercent: 120,
+          opacity: 0,
+        },
+        {
+          xPercent: -80,
+          opacity: 1,
+
+          scrollTrigger: {
+            trigger: "#contact",
+            start: "top 80%",
+            end: "top 30%",
+            scrub: true,
+          },
+        },
+      );
+      // top 버튼
+      const topBtn = document.querySelector("#top_btn");
+      // 스크롤 시 버튼 표시
+      window.addEventListener("scroll", function () {
+        if (document.documentElement.scrollTop > 3000) {
+          topBtn.style.display = "block";
+        } else {
+          topBtn.style.display = "none";
+        }
+      });
+
+      // 클릭 시 맨 위로 이동 (부드럽게)
+      topBtn.onclick = function () {
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth",
+        });
+      };
     </script>
   </body>
 </html>

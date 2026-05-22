@@ -42,21 +42,24 @@
 
     <header id="header">
       <div class="logo">
-        <a href="../../index.html">logo</a>
+        <a href="../../index.html"
+          ><img src="../img/logo_icon.png" alt="" />
+          <p>PORTFOLIO</p></a
+        >
       </div>
       <div class="lnb">
         <ul>
           <li>
-            <a href="#">ABOUT</a>
+            <a href="../../index.html#about">ABOUT</a>
           </li>
           <li>
-            <a href="#">PROFILE</a>
+            <a href="../../index.html#about">PROFILE</a>
           </li>
           <li>
-            <a href="#">WORKS</a>
+            <a href="../../index.html#works">WORKS</a>
           </li>
           <li>
-            <a href="#">CONTACT</a>
+            <a href="../../index.html#contact">CONTACT</a>
           </li>
         </ul>
       </div>
@@ -66,28 +69,52 @@
     <section id="sub_nav">
       <ul>
         <li>
-          <a href="#"><img src="../img/dot.png" alt="" />ABOUT</a>
+          <a href="#sub_about"
+            ><div class="dot"></div>
+            <p>ABOUT</p></a
+          >
         </li>
         <li>
-          <a href="#"><img src="../img/dot.png" alt="" />CORE WORK 1</a>
+          <a href="#coreWork1"
+            ><div class="dot"></div>
+            <p>CORE WORK 1</p></a
+          >
         </li>
         <li>
-          <a href="#"><img src="../img/dot.png" alt="" />CORE WORK 2</a>
+          <a href="#coreWork2"
+            ><div class="dot"></div>
+            <p>CORE WORK 2</p></a
+          >
         </li>
         <li>
-          <a href="#"><img src="../img/dot.png" alt="" />CORE WORK 3</a>
+          <a href="#coreWork3"
+            ><div class="dot"></div>
+            <p>CORE WORK 3</p></a
+          >
         </li>
         <li>
-          <a href="#"><img src="../img/dot.png" alt="" />CORE WORK 4</a>
+          <a href="#coreWork4"
+            ><div class="dot"></div>
+            <p>CORE WORK 4</p></a
+          >
         </li>
         <li>
-          <a href="#"><img src="../img/dot.png" alt="" />CORE WORK 5</a>
+          <a href="#coreWork5"
+            ><div class="dot"></div>
+            <p>CORE WORK 5</p></a
+          >
         </li>
         <li>
-          <a href="#"><img src="../img/dot.png" alt="" />CORE WORK 6</a>
+          <a href="#coreWork6"
+            ><div class="dot"></div>
+            <p>CORE WORK 6</p></a
+          >
         </li>
         <li>
-          <a href="#"><img src="../img/dot.png" alt="" />CORE WORK 7</a>
+          <a href="#coreWork7"
+            ><div class="dot"></div>
+            <p>CORE WORK 7</p></a
+          >
         </li>
       </ul>
     </section>
@@ -453,10 +480,44 @@
         </div>
       </div>
     </section>
+    <button id="top_btn">
+      <img src="../img/top_btn.png" alt="" />
+    </button>
     <!-- gsap -->
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+
     <script>
+      //버튼을 클릭해서 이동하고 애니메이션 주기
+      document.querySelectorAll("#sub_nav").forEach(function (li) {
+        li.addEventListener("click", function (e) {
+          e.preventDefault();
+          document.querySelector(li.getAttribute("href")).scrollIntoView({ behavior: "smooth" });
+        });
+      });
+      //스크롤 이벤트
+
+      let lastScrollTop = 0; // 스크롤탑값 초기화
+      window.addEventListener("scroll", function () {
+        let scrollTop = window.scrollY + window.innerHeight / 2;
+        let scrollTop2 = window.scrollY;
+
+        // 0px 이상 스크롤 다운 - 메뉴 보이기 / 0px까지 스크롤 업 - 메뉴 가리기  (꼭 css부터 수정해 놓기)
+        // if (scrollTop2 > 0) {
+        //   document.querySelector(".nav").classList.add("down");
+        // } else {
+        //   document.querySelector(".nav").classList.remove("down");
+        // }
+
+        // 스크롤 다운 - 메뉴 가리기 / 스크롤  업- 메뉴 보이기  (css부터 수정해 놓기)
+        if (scrollTop2 > lastScrollTop) {
+          document.querySelector("#sub_nav").classList.add("hide");
+        } else {
+          document.querySelector("#sub_nav").classList.remove("hide");
+        }
+        lastScrollTop = scrollTop2;
+      });
+      // 스크롤 이펙트
       gsap.registerPlugin(ScrollTrigger);
 
       const sections = document.querySelectorAll(".sub_coreWork");
@@ -474,6 +535,24 @@
           },
         });
       });
+      // top 버튼
+      const topBtn = document.querySelector("#top_btn");
+      // 스크롤 시 버튼 표시
+      window.addEventListener("scroll", function () {
+        if (document.documentElement.scrollTop > 200) {
+          topBtn.style.display = "block";
+        } else {
+          topBtn.style.display = "none";
+        }
+      });
+
+      // 클릭 시 맨 위로 이동 (부드럽게)
+      topBtn.onclick = function () {
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth",
+        });
+      };
     </script>
   </body>
 </html>
