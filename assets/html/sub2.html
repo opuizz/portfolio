@@ -4,12 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>DESIGN</title>
-    <script src="https://kit.fontawesome.com/fb27592f06.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css" />
     <link rel="stylesheet" href="../css/font.css" />
     <link rel="stylesheet" href="../css/reset.css" />
     <link rel="stylesheet" href="../css/style.css" />
     <link rel="stylesheet" href="../css/responsive.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
   </head>
   <body>
     <!-- mobile header -->
@@ -19,22 +19,22 @@
         <ul>
           <li>
             <div class="sub">
-              <a href="#">ABOUT</a>
+              <a href="../../index.html#about_m">ABOUT</a>
             </div>
           </li>
           <li>
             <div class="sub">
-              <a href="#">PROFILE</a>
+              <a href="../../index.html#profile">PROFILE</a>
             </div>
           </li>
           <li>
             <div class="sub">
-              <a href="#">WORKS</a>
+              <a href="../../index.html#works">WORKS</a>
             </div>
           </li>
           <li>
             <div class="sub">
-              <a href="#">CONTACT</a>
+              <a href="../../index.html#contact">CONTACT</a>
             </div>
           </li>
         </ul>
@@ -55,7 +55,7 @@
             <a href="../../index.html#about">ABOUT</a>
           </li>
           <li>
-            <a href="../../index.html#about">PROFILE</a>
+            <a href="../../index.html#profile">PROFILE</a>
           </li>
           <li>
             <a href="../../index.html#works">WORKS</a>
@@ -153,22 +153,27 @@
           <div class="swiper mySwiper2">
             <div class="swiper-wrapper">
               <div class="swiper-slide">
-                <img src="../img/banner.jpg" alt="" />
+                <img src="../img/banner.jpg" alt="" class="modal_item" />
               </div>
               <div class="swiper-slide">
-                <img src="../img/banner1.jpg" alt="" />
+                <img src="../img/banner1.jpg" alt="" class="modal_item" />
               </div>
               <div class="swiper-slide">
-                <img src="../img/banner2.jpg" alt="" />
+                <img src="../img/banner2.jpg" alt="" class="modal_item" />
               </div>
               <div class="swiper-slide">
-                <img src="../img/banner3.jpg" alt="" />
+                <img src="../img/banner3.jpg" alt="" class="modal_item" />
               </div>
             </div>
           </div>
         </div>
-        <div class="swiper-button-next"></div>
-        <div class="swiper-button-prev"></div>
+        <button class="custom_prev">
+          <i class="fa-solid fa-chevron-left"></i>
+        </button>
+
+        <button class="custom_next">
+          <i class="fa-solid fa-chevron-right"></i>
+        </button>
         <!-- modal -->
         <div class="img_modal">
           <span class="modal_close">&times;</span>
@@ -176,6 +181,9 @@
           <img class="modal_img" src="" alt="" />
         </div>
         <!-- //modal -->
+        <div class="mouse__cursor">
+          <img src="../img/click_cursor.png" alt="" />
+        </div>
         <div thumbsSlider="" class="swiper mySwiper">
           <div class="swiper-wrapper">
             <div class="swiper-slide">
@@ -340,7 +348,9 @@
             </div>
           </div>
           <div class="more">
-            <a href="#">PROJECT DETAILS<i class="fa-light fa-arrow-right" style="color: rgb(255, 255, 255)"></i></a>
+            <a href="https://drive.google.com/file/d/1ryV1qipbdls5poGGSHOAIFxTb5b44abq/view?usp=sharing"
+              >PROJECT DETAILS<i class="fa-solid fa-arrow-right-long"></i
+            ></a>
           </div>
         </div>
       </div>
@@ -386,16 +396,22 @@
               </li>
             </ul>
           </div>
+          <div class="more">
+            <a
+              href="https://docs.google.com/presentation/d/1Kw_R2Q0PyO0OIGCONPvthhWzlOIzPLyz/edit?usp=sharing&ouid=111707586275890650381&rtpof=true&sd=true"
+              >PROJECT DETAILS<i class="fa-solid fa-arrow-right-long"></i
+            ></a>
+          </div>
         </div>
         <div class="work2_right">
-          <img src="../img/event_page.png" alt="" />
+          <img src="../img/event_page_tunmb.png" data-full="../img/event_page.jpg" alt="" class="long_img modal_item" />
         </div>
       </div>
     </section>
     <section id="poster">
       <div class="container">
         <div class="work2_right">
-          <img src="../img/poster.gif" alt="" />
+          <img src="../img/poster_thumb.jpg" data-full="../img/poster.gif" alt="" class="poster_thumb modal_item" />
         </div>
         <div class="work2_left">
           <div class="work2_title">
@@ -434,6 +450,12 @@
               </li>
             </ul>
           </div>
+          <div class="more">
+            <a
+              href="https://docs.google.com/presentation/d/1ZImEegeBoH6hb_Yg-sgPU_uWcsNrylCR/edit?usp=sharing&ouid=111707586275890650381&rtpof=true&sd=true"
+              >PROJECT DETAILS<i class="fa-solid fa-arrow-right-long"></i
+            ></a>
+          </div>
         </div>
       </div>
     </section>
@@ -442,10 +464,9 @@
     </button>
     <!-- Swiper JS -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <!-- gsap -->
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
-
+    <script src="../main.js"></script>
     <!-- Initialize Swiper -->
     <script>
       window.addEventListener("load", () => {
@@ -500,16 +521,18 @@
           slideShadows: true,
         },
 
-        navigation: {
-          nextEl: ".swiper-button-next",
-          prevEl: ".swiper-button-prev",
-        },
-
         on: {
           slideChange: function () {
             swiperText.slideTo(swiper.realIndex);
           },
         },
+      });
+      document.querySelector(".custom_next").addEventListener("click", () => {
+        swiper.slideNext();
+      });
+
+      document.querySelector(".custom_prev").addEventListener("click", () => {
+        swiper.slidePrev();
       });
       // top 버튼
       const topBtn = document.querySelector("#top_btn");
@@ -530,26 +553,81 @@
         });
       };
 
-      const slides = document.querySelectorAll(".swiper-slide img");
+      /* =========================
+   modal
+========================= */
 
       const modal = document.querySelector(".img_modal");
       const modalImg = document.querySelector(".modal_img");
       const closeBtn = document.querySelector(".modal_close");
 
-      /* 이미지 클릭 */
+      /* 모달 적용할 이미지 */
 
-      slides.forEach((slide) => {
-        slide.addEventListener("click", () => {
-          modal.classList.add("open");
+      const modalTargets = document.querySelectorAll(".modal_item");
 
-          modalImg.src = slide.src;
+      /* =========================
+   custom cursor
+========================= */
+
+      const cursor = document.querySelector(".mouse__cursor");
+
+      /* 커서 따라다니기 */
+
+      window.addEventListener("mousemove", (e) => {
+        gsap.to(cursor, {
+          x: e.clientX,
+          y: e.clientY,
+          duration: 0.15,
         });
       });
 
-      /* 닫기 */
+      /* hover 시 커서 보이기 */
+
+      modalTargets.forEach((target) => {
+        target.classList.add("modal_target");
+
+        target.addEventListener("mouseenter", () => {
+          cursor.style.opacity = "1";
+        });
+
+        target.addEventListener("mouseleave", () => {
+          cursor.style.opacity = "0";
+        });
+      });
+
+      /* =========================
+   modal open
+========================= */
+
+      modalTargets.forEach((img) => {
+        img.addEventListener("click", () => {
+          modal.classList.add("open");
+
+          /* 원본 이미지 */
+
+          modalImg.src = img.dataset.full || img.src;
+
+          /* 모달 열리면 커스텀 커서 숨김 */
+
+          cursor.style.opacity = "0";
+
+          /* 긴 이미지 */
+
+          if (img.classList.contains("long_img")) {
+            modal.classList.add("scroll_mode");
+          } else {
+            modal.classList.remove("scroll_mode");
+          }
+        });
+      });
+
+      /* =========================
+   modal close
+========================= */
 
       closeBtn.addEventListener("click", () => {
         modal.classList.remove("open");
+        modal.classList.remove("scroll_mode");
       });
     </script>
   </body>

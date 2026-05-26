@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="../css/reset.css" />
     <link rel="stylesheet" href="../css/style.css" />
     <link rel="stylesheet" href="../css/responsive.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
   </head>
   <body>
     <!-- mobile header -->
@@ -17,22 +18,22 @@
         <ul>
           <li>
             <div class="sub">
-              <a href="#">ABOUT</a>
+              <a href="../../index.html#about_m">ABOUT</a>
             </div>
           </li>
           <li>
             <div class="sub">
-              <a href="#">PROFILE</a>
+              <a href="../../index.html#profile">PROFILE</a>
             </div>
           </li>
           <li>
             <div class="sub">
-              <a href="#">WORKS</a>
+              <a href="../../index.html#works">WORKS</a>
             </div>
           </li>
           <li>
             <div class="sub">
-              <a href="#">CONTACT</a>
+              <a href="../../index.html#contact">CONTACT</a>
             </div>
           </li>
         </ul>
@@ -53,7 +54,7 @@
             <a href="../../index.html#about">ABOUT</a>
           </li>
           <li>
-            <a href="../../index.html#about">PROFILE</a>
+            <a href="../../index.html#profile">PROFILE</a>
           </li>
           <li>
             <a href="../../index.html#works">WORKS</a>
@@ -486,37 +487,8 @@
     <!-- gsap -->
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
-
+    <script src="../main.js"></script>
     <script>
-      //버튼을 클릭해서 이동하고 애니메이션 주기
-      document.querySelectorAll("#sub_nav").forEach(function (li) {
-        li.addEventListener("click", function (e) {
-          e.preventDefault();
-          document.querySelector(li.getAttribute("href")).scrollIntoView({ behavior: "smooth" });
-        });
-      });
-      //스크롤 이벤트
-
-      let lastScrollTop = 0; // 스크롤탑값 초기화
-      window.addEventListener("scroll", function () {
-        let scrollTop = window.scrollY + window.innerHeight / 2;
-        let scrollTop2 = window.scrollY;
-
-        // 0px 이상 스크롤 다운 - 메뉴 보이기 / 0px까지 스크롤 업 - 메뉴 가리기  (꼭 css부터 수정해 놓기)
-        // if (scrollTop2 > 0) {
-        //   document.querySelector(".nav").classList.add("down");
-        // } else {
-        //   document.querySelector(".nav").classList.remove("down");
-        // }
-
-        // 스크롤 다운 - 메뉴 가리기 / 스크롤  업- 메뉴 보이기  (css부터 수정해 놓기)
-        if (scrollTop2 > lastScrollTop) {
-          document.querySelector("#sub_nav").classList.add("hide");
-        } else {
-          document.querySelector("#sub_nav").classList.remove("hide");
-        }
-        lastScrollTop = scrollTop2;
-      });
       // 스크롤 이펙트
       gsap.registerPlugin(ScrollTrigger);
 
@@ -535,6 +507,8 @@
           },
         });
       });
+      // mouse effect
+
       // top 버튼
       const topBtn = document.querySelector("#top_btn");
       // 스크롤 시 버튼 표시
