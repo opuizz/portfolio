@@ -376,7 +376,14 @@
 
       window.addEventListener("scroll", () => {
         const scrollY = window.scrollY;
+        const header = document.querySelector("#header");
+        const stage = document.querySelector("#stage");
 
+        if (scrollY > 2600) {
+          header.classList.add("show");
+        } else {
+          header.classList.remove("show");
+        }
         let index = Math.floor(scrollY / 300);
 
         if (index >= images.length) {
@@ -438,10 +445,10 @@
 
       /* 자동 회전 */
 
-      // setInterval(() => {
-      //   angle -= 72;
-      //   rotateCarousel();
-      // }, 3000);
+      setInterval(() => {
+        angle -= 72;
+        rotateCarousel();
+      }, 5000);
 
       gsap.registerPlugin(ScrollTrigger);
 
@@ -497,9 +504,9 @@
 
       /* 자동 슬라이드 */
 
-      // setInterval(() => {
-      //   nextSlide();
-      // }, 5000);
+      setInterval(() => {
+        nextSlide();
+      }, 5000);
       /* PROFILE 제목 */
       gsap.from(".profile_inner > h1", {
         scrollTrigger: {
