@@ -4,6 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>WEB SITE</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&display=swap"
+      rel="stylesheet"
+    />
     <script src="https://kit.fontawesome.com/fb27592f06.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css" />
     <link rel="stylesheet" href="../css/font.css" />
@@ -138,9 +144,27 @@
               </li>
             </ul>
           </div>
+          <div class="link">
+            <a href="https://opuizz.github.io/team_project/" target="_blank"
+              >VISIT LINK<i class="fa-solid fa-arrow-right-long"></i
+            ></a>
+            <a href="https://docs.google.com/presentation/d/1NW1nGoZl123ZCDsXPOxGEiQDLeJWXYj1/preview" target="_blank"
+              >PROJECT DETAILS<i class="fa-solid fa-arrow-right-long"></i
+            ></a>
+          </div>
         </div>
-        <div class="work2_right">
-          <img src="../img/w_team.png" alt="" />
+        <div class="work2_wrap">
+          <div class="work2_right cursor_target">
+            <a href="https://opuizz.github.io/team_project/" target="_blank"><img src="../img/w_team.png" alt="" /></a>
+          </div>
+          <div class="link">
+            <a href="https://opuizz.github.io/team_project/" target="_blank"
+              >VISIT LINK<i class="fa-solid fa-arrow-right-long"></i
+            ></a>
+            <a href="https://docs.google.com/presentation/d/1NW1nGoZl123ZCDsXPOxGEiQDLeJWXYj1/preview" target="_blank"
+              >PROJECT DETAILS<i class="fa-solid fa-arrow-right-long"></i
+            ></a>
+          </div>
         </div>
       </div>
     </section>
@@ -175,19 +199,13 @@
               </h4>
             </div>
           </div>
-          <div class="link">
-            <a href="https://opuizz.github.io/team_project/">VISIT LINK<i class="fa-solid fa-arrow-right-long"></i></a>
-            <a href="https://docs.google.com/presentation/d/1NW1nGoZl123ZCDsXPOxGEiQDLeJWXYj1/preview"
-              >PROJECT DETAILS<i class="fa-solid fa-arrow-right-long"></i
-            ></a>
-          </div>
         </div>
       </div>
     </section>
     <section id="W_design">
       <div class="container">
-        <div class="work2_right">
-          <img src="../img/w_design.png" alt="" />
+        <div class="work2_right cursor_target">
+          <a href="https://opuizz.github.io/Mountains/" target="_blank"> <img src="../img/w_design.png" alt="" /></a>
         </div>
         <div class="work2_left">
           <div class="work2_title">
@@ -227,7 +245,7 @@
             </ul>
           </div>
           <div class="link">
-            <a href="https://opuizz.github.io/mountain_react/"
+            <a href="https://opuizz.github.io/Mountains/" target="_blank"
               >VISIT LINK<i class="fa-solid fa-arrow-right-long"></i
             ></a>
           </div>
@@ -236,6 +254,9 @@
     </section>
     <section id="W_rebuild1">
       <div class="container">
+        <div class="work2_right cursor_target">
+          <a href="https://opuizz.github.io/Delta-Air/" target="_blank"> <img src="../img/rebuild1.png" alt="" /></a>
+        </div>
         <div class="work2_left">
           <div class="work2_title">
             <h1>Website Rebuild 1</h1>
@@ -274,18 +295,17 @@
             </ul>
           </div>
           <div class="link">
-            <a href="https://opuizz.github.io/Delta-Air/">VISIT LINK<i class="fa-solid fa-arrow-right-long"></i></a>
+            <a href="https://opuizz.github.io/Delta-Air/" target="_blank"
+              >VISIT LINK<i class="fa-solid fa-arrow-right-long"></i
+            ></a>
           </div>
-        </div>
-        <div class="work2_right">
-          <img src="../img/rebuild1.png" alt="" />
         </div>
       </div>
     </section>
     <section id="W_rebuild2">
       <div class="container">
-        <div class="work2_right">
-          <img src="../img/rebuild2.png" alt="" />
+        <div class="work2_right cursor_target">
+          <a href="https://opuizz.github.io/Movie_site/" target="_blank"> <img src="../img/rebuild2.png" alt="" /></a>
         </div>
         <div class="work2_left">
           <div class="work2_title">
@@ -323,14 +343,20 @@
             </ul>
           </div>
           <div class="link">
-            <a href="https://opuizz.github.io/Movie_site/">VISIT LINK<i class="fa-solid fa-arrow-right-long"></i></a>
+            <a href="https://opuizz.github.io/Movie_site/" target="_blank"
+              >VISIT LINK<i class="fa-solid fa-arrow-right-long"></i
+            ></a>
           </div>
         </div>
       </div>
     </section>
+    <div class="mouse__cursor">
+      <img src="../img/click_cursor.png" alt="" />
+    </div>
     <button id="top_btn">
       <img src="../img/top_btn.png" alt="" />
     </button>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script src="../main.js"></script>
     <script>
       // top 버튼
@@ -351,6 +377,32 @@
           behavior: "smooth",
         });
       };
+
+      const cursor = document.querySelector(".mouse__cursor");
+
+      const cursorTargets = document.querySelectorAll(".cursor_target");
+
+      /* 마우스 따라다니기 */
+
+      window.addEventListener("mousemove", (e) => {
+        gsap.to(cursor, {
+          x: e.clientX,
+          y: e.clientY,
+          duration: 0.15,
+        });
+      });
+
+      /* hover */
+
+      cursorTargets.forEach((target) => {
+        target.addEventListener("mouseenter", () => {
+          cursor.style.opacity = "1";
+        });
+
+        target.addEventListener("mouseleave", () => {
+          cursor.style.opacity = "0";
+        });
+      });
     </script>
   </body>
 </html>

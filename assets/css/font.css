@@ -62,7 +62,7 @@
 }
 
 /* 영문 폰트 */
-@font-face {
+/* @font-face {
   font-family: "Cormorant Garamond";
   src: url("../fonts/CormorantGaramond-Regular.woff2") format("woff2");
   font-weight: 400;
@@ -88,4 +88,4 @@
   src: url("../fonts/CormorantGaramond-Bold.woff2") format("woff2");
   font-weight: 700;
   font-style: normal;
-}
+} */
